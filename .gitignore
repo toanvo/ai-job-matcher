@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*.pyd
+*.so
+*.py[co]
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+MANIFEST
+# Virtual environments
+.venv/
+env/
+ENV/
+venv/
+__pypackages__/
+# Dependency management
+.eggs/
+.pdm-build/
+.pdm.toml
+.pip-wheel-metadata/
+# Testing / coverage
+.coverage
+.coverage.*
+.coverage.xml
+.coverage_html/
+.pytest_cache/
+htmlcov/
+nosetests.xml
+hypothesis/
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+# Caches / temporary files
+__pycache__/
+.mypy_cache/
+.dmypy.json
+.ipynb_checkpoints/
