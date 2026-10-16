@@ -72,9 +72,9 @@ def test_calculate_match(job, skills, expected):
             ]
         ),
         (
-            [{"title": "Partial Match", "skills": ["Python", "Docker"]}],
-            {"Python"},
-            [MatchedJob("Partial Match", 50.0)]
+            [{"title": "Partial Match", "skills": ["Python", "Docker", "Database", "Pytorch"]}],
+            {"Python", "Database", "Docker"},
+            [MatchedJob("Partial Match", 75.0)]
         ),
         (
             [{"title": "No Match", "skills": ["Java", "Spring"]}],
@@ -123,5 +123,5 @@ def test_match_jobs_sorted_descending():
 
     assert [job.title for job in result] == [
         "100% Match",
-        "50% Match",
+        "50% Match"    
     ]
