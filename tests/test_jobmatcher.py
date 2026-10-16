@@ -1,7 +1,5 @@
 import pytest
-
-from main import calculate_match, match_jobs, MatchedJob
-
+from job_matcher import calculate_match, match_jobs, MatchedJob
 
 @pytest.mark.parametrize(
     "job, skills, expected",
