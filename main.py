@@ -2,7 +2,8 @@ import logging
 from job_matcher import match_jobs
 from job_matcher.matching import JobMatcher
 from job_matcher.context_managers import measure_block
-
+from job_matcher.matching_service import JobMatchingService
+from job_matcher.strategies import KeywordMatcher
 
 def main() -> None:
     jobs = [
@@ -25,24 +26,16 @@ def main() -> None:
     ]
     
     my_skills = {"python", "Azure", "Docker"}
-    with measure_block("Job Matching"):
-        my_matched_jobs = match_jobs(jobs, my_skills)
+    percentage_service = JobMatchingService(JobMatcher())
+    keyword_service = JobMatchingService(KeywordMatcher())
 
-    for mj in my_matched_jobs:
-        print(mj)
+    print(" Percentage matcher: ")
+    for job in percentage_service.match_jobs(jobs, my_skills):
+        print(job)
 
-    matcher = JobMatcher()
-
-    jobs2 = [
-        {"title": "Python Developer", "skills": ["Python", "Docker"]},
-        {"title": "Java Developer", "skills": ["Java", "Spring"]},
-        {"title": "AI Engineer", "skills": ["Python", "Azure", "LLM"]},
-    ]
-
-    my_skills = {"Python", "Azure"}
-    with measure_block("Generator processing"):
-        for job in matcher.iter_matching_jobs(jobs2, my_skills):
-            print(job)
+    print("Keyword service: ")
+    for job in keyword_service.match_jobs(jobs, my_skills):
+        print(job)
 
 if __name__ == "__main__":
     logging.basicConfig(
