@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Senior Python Developer",
+    "skills": ["Python", "FastAPI", "Docker"]
+  },
+  {
+    "title": "Senior .NET Developer",
+    "skills": ["C#", ".NET", "Azure"]
+  },
+  {
+    "title": "AI Engineer",
+    "skills": ["Python", "LLM", "Azure"]
+  },
+  {
+    "title": "Full Stack Developer",
+    "skills": ["Python", "Angular", "Docker"]
+  }
+]
